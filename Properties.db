@@ -1,0 +1,39 @@
+import sqlite3
+
+#Create SQLite db
+conn = sqlite3.connect("properties.db")
+
+#Create cursor to interact with the db
+cursor = conn.cursor()
+
+#create a table
+cursor.execute("""
+               CREATE TABLE IF NOT EXISTS properties (
+               id INTEGER PRIMARY KEY AUTOINCREMENT,
+               property_name TEXT NOT NULL, 
+               property_type TEXT NOT NULL,
+               property_amenities TEXT NOT NULL,
+               rent_p/m INTEGER NOT NULL,
+               initial_rent_deposit INTEGER NOT NULL,
+               property_county TEXT NOT NULL,
+               property_town TEXT NOT NULL,
+               property_neighborhood TEXT NOT NULL,
+               latitude REAL NOT NULL,
+               longitude REAL NOT NULL
+               )
+               """)
+# Insert your property data
+import json
+
+amenities = ["WiFi", "Parking", "Water"]  # Example amenities list
+
+cursor.execute("""INSERT INTO properties (property_name, property_type, 
+               property_amenities, rent_p/m, initial_rent_deposit, property_county, 
+               property_town, property_neighborhood, latitude, longitude)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+               ("Namaca Apartments", "1 bedroom", json.dumps(amenities), 7000, 
+                15000, "Nairobi", "Utawala", "Lakewood", -1.2917456710881707, 36.97983686780524))
+# Save the changes
+conn.commit()
+# Close the connection
+conn.close()

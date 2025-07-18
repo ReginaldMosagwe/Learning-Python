@@ -1,0 +1,45 @@
+####             # WHILE LOOP IN Python
+
+# With the WHILE LOOP, we can execute a set of statements as long as a condition is true.
+# Example:
+
+x = 1
+while x < 7: # Condition
+    print(x)
+    x += 1 # Remember to increment as shown or else the loop continues forever
+
+#                   #The break statement
+
+# Within a while loop, using the break statement can stop the loop even when the condition is true
+# For example to stop a loop when x = 4:
+
+x = 1
+while x < 7:
+    print(x)
+    if x == 4:
+        break # Exit the loop when x is 4
+    i += 1
+
+#                   # The continue statement
+
+# With the continue statement, one can stop the current iteration, and continue with the next
+
+x = 0 #iteration's starting point
+while x < 7: # condition
+    x += 1 # increment
+    if x == 4: 
+        continue
+    print(x)
+
+#                   # The else Statement
+
+# With else, one can run a block of code once the condition is false
+
+x = 0
+while x < 7:
+    print(x)
+    x += 1
+else:
+    print("x is no longer less than 7")
+
+# Keep the lessons on While loop internaized. 

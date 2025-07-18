@@ -374,3 +374,134 @@ riley = {"five", "six", "seven"} #This can be a set, tuple, list, or dictionary
 thisset.update(riley) # Will add all items in the riley set to thisset
 print(thisset) # Will print out {'one', 'two', 'three', 'four', 'five', 'six', 'seven'}
 
+##     ##Removing Set Items
+# Using the remove() method or the discard() method will remove an item from a set
+# The difference is that remove() will raise an error if the item does not exist, while discard() will not raise an error
+
+# REMOVE()
+thisset = {"one", "two", "three", "four", "five", "six", "seven"}
+thisset.remove("three") # Will remove "three" from the set
+print(thisset) # Will print out {'one', 'two', 'four', 'five', 'six', 'seven'}
+
+# DISCARD()
+thisset = {"one", "two", "three", "four", "five", "six", "seven"}
+thisset.discard("four")
+print(thisset) # Will print out {'one', 'two', 'three', 'five', 'six', 'seven'}
+
+# Using the pop() method will remove a random item from the set because sets are unordered
+thisset = {"one", "two", "three", "four", "five", "six", "seven"}
+thisset.pop() # Will remove a random item from the set
+
+#del keyword
+del thisset # Will delete the entire set and raise an error if you try to access it again (because it does not exist anymore)
+# The clear() method will remove all items from the set but the set will still exist
+
+##                  ## JOIN SETS
+# The union() and update() methods can be used to add items from one set to another set
+
+set1 = {"one", "two", "three"}
+set2 = {"four", "five", "six"}
+set3 = set1.union(set2) # Will return a new set with items from both sets
+print(set3) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
+
+multiplesets = set1.union(set2, set3) # Will return a new set with items from all three sets
+print(multiplesets) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
+
+#NOTE: the | operator only allows set to set joining, not set to list or tuple joining
+set3 = set1 | set2 # This is an alternative way to join sets using the | operator
+print(set3) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}]
+
+set4 = set1 | set2 | set3 # This is an alternative way to join multiple sets using the | operator
+print(set4) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'} (NO DUPLICATES)
+
+#NOTE: The update() method changes the original set and does not return a new set 
+set1.update(set2) # Will add items from set2 to set1
+print(set1) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
+
+
+# The intersection() method and the & operator can be used to return a new set with items that are present in both sets
+# the intersection() method and & operator keeps ONLY the duplicates
+# However, the & operator only allows set to set joining, not set to list or tuple joining
+set1 = {"one", "two", "three"}
+set2 = {"three", "four", "five"}
+set3 = set1.intersection(set2) # Will return set3 = {"three"}
+print(set3) # Will print out {'three'}  
+
+# The difference() method and - operator can be used to return a new set with items that are present in the first set but not in the second set
+# However, the - operator only allows set to set joining, not set to list or tuple joining
+set1 = {"one", "two", "three"}
+set2 = {"three", "four", "five"}
+set3 = set1.difference(set2) # Will return set3 = {"one", "two"}
+print(set3) # Will print out {'one', 'two'}
+
+# The symmetric difference() method and ^ operator can be used to keep items that are present in either set but not in both
+# However, the ^ operator only allows set to set joining, not set to list or tuple joining
+set1 = {"one", "two", "three"}
+set2 = {"three", "four", "five"}
+set3 =  set1.symmetric_difference(set2) # Will return set3 = {"one", "two", "four", "five"}
+print(set3) # Will print out {'one', 'two', 'four', 'five
+
+####                  ### DICTIONARIES
+# A dictionary is a collection of key-value pairs that are unordered, changeable, and indexed.
+# Dictionaries are defined using curly braces {} and can be accessed using keys.    
+properties = {
+    "name": "Namaca Apartments",
+    "rent": 7000,
+    "city": "Nairobi",
+    "amenities": ["balcony", "parking", "gym"]
+}
+
+keys = properties.keys()
+print(keys) # Output: dict_keys(['name', 'rent', 'city', 'amenities'])
+
+properties.update({"rent": 7500}) # Update the rent of the property
+print(properties["rent"]) 
+
+properties['location'] = "MXXH+VX Nairobi"  # Add a new key-value pair for location
+print(properties) # Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym'], 'location': 'MXXH+VX Nairobi'}
+
+# Example of a dictionary with multiple properties
+properties = [
+    {"name": "Namaca Apartments", "rent": 7000, "city": "Nairobi", "amenities": ["balcony", "parking", "gym"]},
+    {"name": "Greenview Estates", "rent": 8000, "city": "Nairobi", "amenities": ["gym"]},
+    {"name": "Sunrise Villas", "rent": 6000, "city": "Nairobi", "amenities": ["balcony"]}
+]
+
+# the pop() method removes the item with the specified key name
+properties.pop("location") # Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+#NOTE: the popitem() method removes the last inserted key-value pair
+
+properties.popitem()
+print(properties) # Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+
+del properties["rent"] # Delete the "rent" key-value pair
+print(properties) # Output: {'name': 'Namaca Apartments', 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+
+del properties # Clear the entire dictionary
+print(properties) # Raises NameError: name 'properties' is not defined
+
+properties.clear() # Clear the entire dictionary without deleting it
+print(properties) # Output: {}
+
+#### LOOPING IN DICTIONARIES
+# You can loop through a dictionary using a for loop, while loop, and index numbers loop
+# Using a for loop
+for x in properties:
+    print(x) # Will print each key name in the dictionary
+for x in properties.keys():
+    print(x) # Will print each key name in the dictionary
+
+for x in properties:
+    print(properties[x]) # Will print each value in the dictionary
+for x in properties.value():
+    print(x) # Will print each value in the dictionary
+
+for x, y in properties.items():
+    print(x, y) # Will print each key-value pair in the dictionary
+
+## Copying a dictionary
+# The copy() method returns a copy of the dictionary
+properties_copy = properties.copy() # Will create a copy of the properties dictionary
+
+# or use the dict() constructor to copy a dictionary
+properties_copy = dict(properties) # Will create a copy of the properties dictionary

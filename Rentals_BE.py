@@ -1,3 +1,17 @@
+import math
+import re
+
+def myfunc(n): # formula to compare absolute distance between each property and the starting point (your location)
+   return abs(n-current_location) #Set for more in depth coding
+
+
+
+
+
+
+
+
+
 min_rent = 5000
 max_rent = 8000
 amenities = ["balcony", "parking", "gym"]
@@ -20,6 +34,9 @@ if perfectmatches:
     else:
         print("No perfect matches with amenities found within the specified range.")
 
+# A match is an object containing information about the search and result
+# If there is no match, the value 'None' will be returned
+
 count = len(perfectmatches) # Show the client this is the number of results returning from their search
 
 
@@ -33,13 +50,12 @@ if taken_property_index is not None:
 # here n is the various locations of properties. 
 current_location = "MXXH+VX Nairobi"  # Set this to the desired initial location according to Google Maps
 
-#def myfunc(n):
-#    return abs(n - current_location) #Set for more in depth coding
 
-#perfectmatches.sort(key = myfunc) # Sort the perfect matches based on their closeness to the initial location
-#print("Sorted perfect matches based on closeness to initial location:")
-#for match in perfectmatches:
-#    print(f"{match['name'], match['rent'], match['amenities']}")  # Shows the client the name and rent of each property sorted by closeness
+
+perfectmatches.sort(key=myfunc) # Sort the perfect matches based on their closeness to the initial location
+print("Sorted perfect matches based on closeness to initial location:")
+for match in perfectmatches:
+    print(f"{match['name'], match['rent'], match['amenities']}")  # Shows the client the name and rent of each property sorted by closeness
 
 
 

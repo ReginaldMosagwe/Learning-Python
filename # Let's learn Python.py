@@ -1,10 +1,10 @@
 # Let's learn Python
-# There are numerous groups of operators: Arithmetic, Assignment, 
+# There are numerous groups of operators: Arithmetic, Assignment,
 # Logical, Comparison, Bitwise, Identity, & Membership operators.\
 
 
-
 # First off we deal with Arithmetic Operators
+import pandas as pd
 print("Arithmetic Operators:")
 
 x = 50
@@ -32,12 +32,12 @@ x /= 2
 print(x)
 x %= 2
 print(x)
-x //= 2 #Floor division performs a division and returns the largest whole integer <= the result
+x //= 2  # Floor division performs a division and returns the largest whole integer <= the result
 print(x)
-x **= 3 #more like x to the power of 3
+x **= 3  # more like x to the power of 3
 print(x)
 
-print(x := 2) #Assigns a value to a variable as part of an expression 
+print(x := 2)  # Assigns a value to a variable as part of an expression
 
 print("Logical Operators:")
 
@@ -48,9 +48,9 @@ print("Logical Operators:")
 x = 5
 y = 8
 
-print("X and Y:", x>4 and y<9)
-print("X or Y:", x>4 or y<6)
-print("not X:", not x>4)
+print("X and Y:", x > 4 and y < 9)
+print("X or Y:", x > 4 or y < 6)
+print("not X:", not x > 4)
 
 print("Comparison Operators are similar to their function in mathematics")
 # They are used to compare two values and return a boolean result
@@ -67,7 +67,7 @@ x is y
 x is not y
 
 print("Membership Operators:")
-#Used to check the presence of a value in a sequence(list, tuple, string)
+# Used to check the presence of a value in a sequence(list, tuple, string)
 # Include in and not in
 x = [1, 2, 3, 4, 5]
 print("1 in x:", 1 in x)
@@ -76,34 +76,36 @@ print("6 not in x:", 6 not in x)
 # They are often used in conditional statements and loops
 
 # OPERATOR PRECEDENCE
-#Operators have a precedence that determines the order in which they are evaluated
+# Operators have a precedence that determines the order in which they are evaluated
 # The order of precedence is as follows:
 #   1. Parenthesees ()
 print((6*3)+(5-1))
 #   2. Exponentiation **
 print(6**3+(5-1))
 #   3. Unary plus and minus + -
-print(100+ -1)
+print(100 + -1)
 #   4. Multiplication, Division, Floor Division, and Modulus *, /, //, %
-print((6*3)+(5/1)-(4//2) *(10%4))
+print((6*3)+(5/1)-(4//2) * (10 % 4))
 #   5. Addition and Subtraction + -
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1)
 #   6. Bitwise Shift Operators << and >>]
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2)
 #   7. Bitwise AND &
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2 & 2)
 #   8. Bitwise XOR ^
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2 ^ 3)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2 & 2 ^ 3)
 #   9. Bitwise OR |
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2 ^ 3 | 4)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2 & 2 ^ 3 | 4)
 #   10. Comparison Operators <, <=, >, >=, ==, !=
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2 ^ 3 | 4 < 5)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2 & 2 ^ 3 | 4 < 5)
 #   11. Identity Operators is, is not
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2 ^ 3 | 4 < 5 is True)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2 & 2 ^ 3 | 4 < 5 is True)
 #   12. Membership Operators in, not in
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2 ^ 3 | 4 < 5 is True in [True, False])
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2 &
+      2 ^ 3 | 4 < 5 is True in [True, False])
 #   13. Logical Operators and, or, not
-print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2 ^ 3 | 4 < 5 is True in [True, False] and True)
+print((6*3)+(5/1)-(4//2) * (10 % 4)+100-1 << 2 & 2 ^
+      3 | 4 < 5 is True in [True, False] and True)
 
 
 #                       PYTHON LISTS
@@ -115,10 +117,11 @@ print((6*3)+(5/1)-(4//2) *(10%4)+100-1<<2 & 2 ^ 3 | 4 < 5 is True in [True, Fals
 thislist = ["a", 2, 3.1, True, (1, 2, 3), "hello", [1, 2, 3]]
 print("This is a list:", thislist)
 print("The first item in the list is:", thislist[0])
-print("The last item in the list is:", thislist[-1]) # Negative indexing means start from the end of the list
+# Negative indexing means start from the end of the list
+print("The last item in the list is:", thislist[-1])
 # The Second, Third, ...items are [1], [2], ... and so on
 #  Lists are ordered, and that order will not change. The last added will appear at list's end
-# One can change, add, and remove list items after list creation. 
+# One can change, add, and remove list items after list creation.
 # Also, lists can contain duplicate items.
 # # To determine list length, use the len() function
 print(len(thislist))
@@ -127,29 +130,34 @@ print(len(thislist))
 print(type(thislist))
 # You can change the item indexed in a list as follows:
 thislist[0] = "z"
-print(thislist) # will return; thislist = ['z', 2, 3.1, True, (1, 2, 3), 'hello', [1, 2, 3]]
+# will return; thislist = ['z', 2, 3.1, True, (1, 2, 3), 'hello', [1, 2, 3]]
+print(thislist)
 
-print(thislist[:4]) # Will begin from the start of the list and return the first four items
-print(thislist[2:]) # Will return the lsit from the third item to the end
+# Will begin from the start of the list and return the first four items
+print(thislist[:4])
+print(thislist[2:])  # Will return the lsit from the third item to the end
 thislist[1:2] = [17, "wewe"]
-print(thislist) # Will return thislist = ["z", 17, "wewe", 3.1, True, ...]
+print(thislist)  # Will return thislist = ["z", 17, "wewe", 3.1, True, ...]
 # Thus the immediate above moves will result in the list length increasing by one item
- # Other than lists, other arrays in Python include tuples, sets, and dictionaries.
+# Other than lists, other arrays in Python include tuples, sets, and dictionaries.
 # Inserting an Item to the List
 thislist.insert(2, "mimi")
-print(thislist) # Will return thislist = ["z", 17, "mimi", "wewe", 3.1, True, (1, 2, 3), 'hello', [1, 2, 3]]
+# Will return thislist = ["z", 17, "mimi", "wewe", 3.1, True, (1, 2, 3), 'hello', [1, 2, 3]]
+print(thislist)
 thislist.append("newItem")
-print(thislist) # Will return thislist = ["z", 17, "mimi", "wewe", 3.1, True, (1, 2, 3), 'hello', [1, 2, 3], 'newItem']
+# Will return thislist = ["z", 17, "mimi", "wewe", 3.1, True, (1, 2, 3), 'hello', [1, 2, 3], 'newItem']
+print(thislist)
 # Append() function will add a new item to the end of the list
-thislist.remove("newItem") # Will remove the first occurrence of the item in the list
+# Will remove the first occurrence of the item in the list
+thislist.remove("newItem")
 
-thislist.pop(2) # Will remove the item at index 2
-thislist.pop() # Will remove the last item in the list
+thislist.pop(2)  # Will remove the item at index 2
+thislist.pop()  # Will remove the last item in the list
 
-del thislist[2] # Will delete the item at index 2
-del thislist # Will delete the entire list
+del thislist[2]  # Will delete the item at index 2
+del thislist  # Will delete the entire list
 
-thislist.clear() # Will remove all items in the list, but the list will still exist
+thislist.clear()  # Will remove all items in the list, but the list will still exist
 
 
 # LOOPING IN LISTS
@@ -159,13 +167,14 @@ thislist = [1, "Reginald", 3.14, True, [1, 2, 3], (4, 5, 6)]
 
 # USING A FOR LOOP
 for x in thislist:
-    print(x) # Will print each item in the list
+    print(x)  # Will print each item in the list
 
 # By refering to the index number, you can also loop through the list
-for x in range(len(thislist)): # When including Range, the start index, i.e., [2] is included but the end index, i.e., [5] is not
+# When including Range, the start index, i.e., [2] is included but the end index, i.e., [5] is not
+for x in range(len(thislist)):
     print(thislist(x))
 
-#USING A WHILE LOOP
+# USING A WHILE LOOP
 x = 0
 while x < len(thislist):
     print(thislist[x])
@@ -173,178 +182,193 @@ while x < len(thislist):
 
     # USING LIST COMPREHENSION
 thislist = [1, "Reginald", 3.14, True, [1, 2, 3], (4, 5, 6)]
-[print (x) for x in thislist]
+[print(x) for x in thislist]
 
-daylist = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+daylist = ["Monday", "Tuesday", "Wednesday",
+           "Thursday", "Friday", "Saturday", "Sunday"]
 newlist = []
 for x in thislist:
     if "t" in x:
         newlist.append(x)
-        print(newlist) #Will print the items in the list that contain the letter "t", i.e., ["Tuesday", "Thursday", "Saturday"] in newlist
+        # Will print the items in the list that contain the letter "t", i.e., ["Tuesday", "Thursday", "Saturday"] in newlist
+        print(newlist)
 
 # However, you can shorten this process with list comprehension
 newlist = [x for x in daylist if "t" in x]
-print(newlist) # Will print the items in the list that contain the letter "t", i.e., ["Tuesday", "Thursday", "Saturday"] in newlist
+# Will print the items in the list that contain the letter "t", i.e., ["Tuesday", "Thursday", "Saturday"] in newlist
+print(newlist)
 # The Syntax is:
-    # [expression for item in iterable if condition]
-    # Example:
-    # newlist = [x for x in daylist if "t" in x]
+# [expression for item in iterable if condition]
+# Example:
+# newlist = [x for x in daylist if "t" in x]
 
-#CONDITIONS
+# CONDITIONS
 # Conditions are used to perform filtration since it only accepts items that evaluate to TRUE
-#An iterable can be a list, tuple, dictionary, set, or range() function
+# An iterable can be a list, tuple, dictionary, set, or range() function
 # The expression is the current item in the iteration, but is also the outcome
 # The expression can be manipulated before being returned to the new list
 newlist = [x.upper() for x in daylist if "t" in x]
 print(newlist)
 
-newlist = [x if x != "Monday" else "FUDGE!!" for x in daylist] #Will replace "Monday" with "FUDGE!!"
+# Will replace "Monday" with "FUDGE!!"
+newlist = [x if x != "Monday" else "FUDGE!!" for x in daylist]
 
 # SORT LIST
 
 # The sort() method sorts list objects alphanumerically, ascending by default
-thislist = ["apple", "banana", "cherry", "date", "orange", "kiwi", "pineapple", "mango"]
+thislist = ["apple", "banana", "cherry", "date",
+            "orange", "kiwi", "pineapple", "mango"]
 thislist.sort()
-print(thislist) # Will print the sorted list in ascending order
+print(thislist)  # Will print the sorted list in ascending order
 
-thislist.sort(reverse = True)
-print(thislist) # Will print the sorted list in descending order
+thislist.sort(reverse=True)
+print(thislist)  # Will print the sorted list in descending order
+
 
 def myfunc(n):
     return abs(n - 50)
 
+
 thislist = [100, 50, 65, 82, 23]
-thislist.sort(key = myfunc)
-print(thislist) # Will sort the list based on its closeness to 50
+thislist.sort(key=myfunc)
+print(thislist)  # Will sort the list based on its closeness to 50
 
 # By default sort() method is case sensitive, meaning that uppercase letters will be sorted before lowercase letters
 # T oignore case sensitivity, use the key parameter with str.lower
 fruits = ["banana", "Orange", "Kiwi", "cherry"]
 
-fruits.sort() # Will return ['Kiwi', 'Orange', 'banana', 'cherry'] # This takes into account case sensitivity
-fruits.sort(key = str.lower) # Will return ['banana', 'cherry', 'Kiwi', 'Orange'] # This ignores case sensitivity
+# Will return ['Kiwi', 'Orange', 'banana', 'cherry'] # This takes into account case sensitivity
+fruits.sort()
+# Will return ['banana', 'cherry', 'Kiwi', 'Orange'] # This ignores case sensitivity
+fruits.sort(key=str.lower)
 
-#COPYING IN PYTHON LISTS
+# COPYING IN PYTHON LISTS
 
 # The copy() method returns a copy of any list.
 # Example:
 fruits = ["banana", "Orange", "Kiwi", "cherry"]
 matunda = fruits.copy()
-print(matunda) # Will print out ['banana', 'Orange', 'Kiwi', 'cherry']
+print(matunda)  # Will print out ['banana', 'Orange', 'Kiwi', 'cherry']
 
 # ALTERNATIVELY, one might use the list() constructor to copy a list
 matunda = list(fruits)
-print(matunda) # Will print out ['banana', 'Orange', 'Kiwi', 'cherry']
+print(matunda)  # Will print out ['banana', 'Orange', 'Kiwi', 'cherry']
 # However, this method will not work for nested lists, as it will only copy the outer list
 # To copy a nested list, use the copy() method or the list() constructor
 
 # LASTLY, one can use the slicing method to copy a list
 matunda = fruits[:]
-print(matunda) # Will print out ['banana', 'Orange', 'Kiwi', 'cherry']
+print(matunda)  # Will print out ['banana', 'Orange', 'Kiwi', 'cherry']
 # However, this method will not work for nested lists, as it will only copy the outer list
 # To copy a nested list, use the copy() method or the list() constructor
 
-#JOINING TWO LISTS
+# JOINING TWO LISTS
 
 # The + operator can be used to join or concatenate two lists
 list1 = ["apple", "banana", "cherry"]
 list2 = ["orange", "kiwi", "mango"]
 list3 = list1 + list2
-print(list3) # Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+# Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+print(list3)
 
 # The extend () method can also be used in joining or concatenating two lists
 list1 = ["apple", "banana", "cherry"]
 list2 = ["orange", "kiwi", "mango"]
 list1.extend(list2)
-print(list1) # Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+# Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+print(list1)
 # The extend() method will add the items of the second list to the end of the first list
 
 # The append() method can also be used to add a list to another list
 list1 = ["apple", "banana", "cherry"]
 list2 = ["orange", "kiwi", "mango"]
 list1.append(x for x in list2)
-print(list1) # Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+# Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+print(list1)
 # The append() method will add the entire list as a single item to the end of the list
 
-### Range and Negative Indexes
+# Range and Negative Indexes
 list3 = list1 + list2
-print(list3) # Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+# Will print out ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']
+print(list3)
 
-marketable_list = list3[-5:-1] # Will include index -5 (Orange) and exclude index -1 (Mango)
-print(marketable_list) # Will print out ['banana', 'cherry', 'orange', 'kiwi']
+# Will include index -5 (Orange) and exclude index -1 (Mango)
+marketable_list = list3[-5:-1]
+print(marketable_list)  # Will print out ['banana', 'cherry', 'orange', 'kiwi']
 
 
-
-## TUPLES
+# TUPLES
 
 # A tuple has round braces () while a list has square braces []
 # A tuple can have one or more items, but it is immutable (cannot be changed)
 
-thistuple = ("apple",) # A tuple with one item must have a comma after the item
+# A tuple with one item must have a comma after the item
+thistuple = ("apple",)
 print(type(thistuple))
 
 anothertuple = ("banana", "cherry", "orange")
 print(anothertuple)
 
-### Workarounds for TUPLES
+# Workarounds for TUPLES
 # Tuples are immutable, meaning that once created, they cannot be changed
 # However, you can convert a tuple to a list, change the list, and then convert it back to a tuple
 # Example:
 
-x = ("banana", "cherry", "apple") #tuple
-y = list(x) #convert tuple to list
-y[1] = "kiwi" #change the list
-x = tuple(y) #convert list back to tuple
-print(x) # Will print out ('banana', 'kiwi', 'apple')
+x = ("banana", "cherry", "apple")  # tuple
+y = list(x)  # convert tuple to list
+y[1] = "kiwi"  # change the list
+x = tuple(y)  # convert list back to tuple
+print(x)  # Will print out ('banana', 'kiwi', 'apple')
 
-## ALSO, one can add a tuple to another tuple using the + operator
+# ALSO, one can add a tuple to another tuple using the + operator
 x = ("banana", "cherry", "apple")
-y = ('ochanda',) # Remember a one-item tumple requires the comma & tpe of quote does not matter
-x += y # this will add the second tuple to the first tuple
-print(x) # Will print out ('banana', 'cherry', 'apple', 'ochanda')
+# Remember a one-item tumple requires the comma & tpe of quote does not matter
+y = ('ochanda',)
+x += y  # this will add the second tuple to the first tuple
+print(x)  # Will print out ('banana', 'cherry', 'apple', 'ochanda')
 
-## To remove, append, or change items in a tuple in any way, one must convert the tuple to a list, make the changes, and then convert it back to a tuple
+# To remove, append, or change items in a tuple in any way, one must convert the tuple to a list, make the changes, and then convert it back to a tuple
 
 # Assigning values to a tuple is called packing while unpacking is the process of extracting values from a tuple into variables
-fruits = ("apple", "banana", "cherry") # Packing
-(fruit1, fruit2, fruit3) = fruits # Unpacking
-print(fruit1) # Will print 'apple'
-print(fruit2) # Will print 'banana'
-print(fruit3) # Will print 'cherry'
-########## NOTE: The number of variables must match the number of values in the tuple, if not, you must use an asterisk to collect the remaining values as a list.
+fruits = ("apple", "banana", "cherry")  # Packing
+(fruit1, fruit2, fruit3) = fruits  # Unpacking
+print(fruit1)  # Will print 'apple'
+print(fruit2)  # Will print 'banana'
+print(fruit3)  # Will print 'cherry'
+# NOTE: The number of variables must match the number of values in the tuple, if not, you must use an asterisk to collect the remaining values as a list.
 
-## LOOPING THROUGH TUPLES
+# LOOPING THROUGH TUPLES
 
 # You can loop through a tuple using a for, while, and index numbers loop
 # Using a for loop
 for x in fruits:
-    print(x) # Will print each item in the tuple
+    print(x)  # Will print each item in the tuple
 
-#Using a while loop
+# Using a while loop
 i = 0
-while i < len(fruits): # 
-    print(fruits[i]) # Will print each item in the tuple
-    i += 1 # Increment the index by 1
+while i < len(fruits):
+    print(fruits[i])  # Will print each item in the tuple
+    i += 1  # Increment the index by 1
 
 # Using index numbers
 for i in range(len(fruits)):
-    print(fruits[i]) # Will print each item in the tuple
+    print(fruits[i])  # Will print each item in the tuple
 
 # Using list comprehension
 fruits = ("apple", "banana", "cherry")
-[print(x) for x in fruits] # Will print each item in the tuple
+[print(x) for x in fruits]  # Will print each item in the tuple
 
-## One can add and multiply tuples using the + and * operators
+# One can add and multiply tuples using the + and * operators
 # Adding tuples
 tuple1 = ("apple", "banana", "cherry")
 tuple2 = ("orange", "kiwi", "mango")
 tuple3 = tuple1 + tuple2
-print(tuple3) # Will print out ('apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango')
+print(tuple3)  # Will print out ('apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango')
 
 # Multiplying tuples
 tuple1 = ("apple", "banana", "cherry")
 tuple2 = tuple1 * 3
-print(tuple2) # Will print out ('apple', 'banana', 'cherry', 'apple', 'banana', 'cherry', 'apple', 'banana', 'cherry'),
+print(tuple2)  # Will print out ('apple', 'banana', 'cherry', 'apple', 'banana', 'cherry', 'apple', 'banana', 'cherry'),
 # The * operator will repeat the tuple the specified number of times
 
 # del tuple2 will delete the entire tuple
@@ -358,65 +382,73 @@ del tuple2
 thisset = {"apple", "banana", "cherry"}
 print("This is a set:", thisset)
 # Sets are unordered, meaning that the items have no index and cannot be accessed by index number
-#The values 'True' and 1 are considered the same in a set, as are 'False' and 0 (Considered duplicate items)
+# The values 'True' and 1 are considered the same in a set, as are 'False' and 0 (Considered duplicate items)
 # Once a set is created, you cannot change its items, but you can add and remove items
 # To determine the length of a set, use the len() function
 
 # To add an item to a set, use the method add()
 
 thisset = {"one", "two", "three"}
-thisset.add("four") # Will add "four" to the set
-print(thisset) # Will print out {'one', 'two', 'three', 'four'}
+thisset.add("four")  # Will add "four" to the set
+print(thisset)  # Will print out {'one', 'two', 'three', 'four'}
 
 # To add multiple items (Another set, tuple, list, or dictionary) to a set, use the update() method
 
-riley = {"five", "six", "seven"} #This can be a set, tuple, list, or dictionary
-thisset.update(riley) # Will add all items in the riley set to thisset
-print(thisset) # Will print out {'one', 'two', 'three', 'four', 'five', 'six', 'seven'}
+# This can be a set, tuple, list, or dictionary
+riley = {"five", "six", "seven"}
+thisset.update(riley)  # Will add all items in the riley set to thisset
+# Will print out {'one', 'two', 'three', 'four', 'five', 'six', 'seven'}
+print(thisset)
 
-##     ##Removing Set Items
+# Removing Set Items
 # Using the remove() method or the discard() method will remove an item from a set
 # The difference is that remove() will raise an error if the item does not exist, while discard() will not raise an error
 
 # REMOVE()
 thisset = {"one", "two", "three", "four", "five", "six", "seven"}
-thisset.remove("three") # Will remove "three" from the set
-print(thisset) # Will print out {'one', 'two', 'four', 'five', 'six', 'seven'}
+thisset.remove("three")  # Will remove "three" from the set
+print(thisset)  # Will print out {'one', 'two', 'four', 'five', 'six', 'seven'}
 
 # DISCARD()
 thisset = {"one", "two", "three", "four", "five", "six", "seven"}
 thisset.discard("four")
-print(thisset) # Will print out {'one', 'two', 'three', 'five', 'six', 'seven'}
+# Will print out {'one', 'two', 'three', 'five', 'six', 'seven'}
+print(thisset)
 
 # Using the pop() method will remove a random item from the set because sets are unordered
 thisset = {"one", "two", "three", "four", "five", "six", "seven"}
-thisset.pop() # Will remove a random item from the set
+thisset.pop()  # Will remove a random item from the set
 
-#del keyword
-del thisset # Will delete the entire set and raise an error if you try to access it again (because it does not exist anymore)
+# del keyword
+# Will delete the entire set and raise an error if you try to access it again (because it does not exist anymore)
+del thisset
 # The clear() method will remove all items from the set but the set will still exist
 
-##                  ## JOIN SETS
+# JOIN SETS
 # The union() and update() methods can be used to add items from one set to another set
 
 set1 = {"one", "two", "three"}
 set2 = {"four", "five", "six"}
-set3 = set1.union(set2) # Will return a new set with items from both sets
-print(set3) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
+set3 = set1.union(set2)  # Will return a new set with items from both sets
+print(set3)  # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
 
-multiplesets = set1.union(set2, set3) # Will return a new set with items from all three sets
-print(multiplesets) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
+# Will return a new set with items from all three sets
+multiplesets = set1.union(set2, set3)
+# Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
+print(multiplesets)
 
-#NOTE: the | operator only allows set to set joining, not set to list or tuple joining
-set3 = set1 | set2 # This is an alternative way to join sets using the | operator
-print(set3) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}]
+# NOTE: the | operator only allows set to set joining, not set to list or tuple joining
+set3 = set1 | set2  # This is an alternative way to join sets using the | operator
+print(set3)  # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}]
 
-set4 = set1 | set2 | set3 # This is an alternative way to join multiple sets using the | operator
-print(set4) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'} (NO DUPLICATES)
+# This is an alternative way to join multiple sets using the | operator
+set4 = set1 | set2 | set3
+# Will print out {'one', 'two', 'three', 'four', 'five', 'six'} (NO DUPLICATES)
+print(set4)
 
-#NOTE: The update() method changes the original set and does not return a new set 
-set1.update(set2) # Will add items from set2 to set1
-print(set1) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
+# NOTE: The update() method changes the original set and does not return a new set
+set1.update(set2)  # Will add items from set2 to set1
+print(set1)  # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
 
 
 # The intersection() method and the & operator can be used to return a new set with items that are present in both sets
@@ -424,26 +456,27 @@ print(set1) # Will print out {'one', 'two', 'three', 'four', 'five', 'six'}
 # However, the & operator only allows set to set joining, not set to list or tuple joining
 set1 = {"one", "two", "three"}
 set2 = {"three", "four", "five"}
-set3 = set1.intersection(set2) # Will return set3 = {"three"}
-print(set3) # Will print out {'three'}  
+set3 = set1.intersection(set2)  # Will return set3 = {"three"}
+print(set3)  # Will print out {'three'}
 
 # The difference() method and - operator can be used to return a new set with items that are present in the first set but not in the second set
 # However, the - operator only allows set to set joining, not set to list or tuple joining
 set1 = {"one", "two", "three"}
 set2 = {"three", "four", "five"}
-set3 = set1.difference(set2) # Will return set3 = {"one", "two"}
-print(set3) # Will print out {'one', 'two'}
+set3 = set1.difference(set2)  # Will return set3 = {"one", "two"}
+print(set3)  # Will print out {'one', 'two'}
 
 # The symmetric difference() method and ^ operator can be used to keep items that are present in either set but not in both
 # However, the ^ operator only allows set to set joining, not set to list or tuple joining
 set1 = {"one", "two", "three"}
 set2 = {"three", "four", "five"}
-set3 =  set1.symmetric_difference(set2) # Will return set3 = {"one", "two", "four", "five"}
-print(set3) # Will print out {'one', 'two', 'four', 'five
+# Will return set3 = {"one", "two", "four", "five"}
+set3 = set1.symmetric_difference(set2)
+print(set3)  # Will print out {'one', 'two', 'four', 'five
 
-####                  ### DICTIONARIES
+# DICTIONARIES
 # A dictionary is a collection of key-value pairs that are unordered, changeable, and indexed.
-# Dictionaries are defined using curly braces {} and can be accessed using keys.    
+# Dictionaries are defined using curly braces {} and can be accessed using keys.
 properties = {
     "name": "Namaca Apartments",
     "rent": 7000,
@@ -452,56 +485,78 @@ properties = {
 }
 
 keys = properties.keys()
-print(keys) # Output: dict_keys(['name', 'rent', 'city', 'amenities'])
+print(keys)  # Output: dict_keys(['name', 'rent', 'city', 'amenities'])
 
-properties.update({"rent": 7500}) # Update the rent of the property
-print(properties["rent"]) 
+properties.update({"rent": 7500})  # Update the rent of the property
+print(properties["rent"])
 
-properties['location'] = "MXXH+VX Nairobi"  # Add a new key-value pair for location
-print(properties) # Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym'], 'location': 'MXXH+VX Nairobi'}
+# Add a new key-value pair for location
+properties['location'] = "MXXH+VX Nairobi"
+# Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym'], 'location': 'MXXH+VX Nairobi'}
+print(properties)
 
 # Example of a dictionary with multiple properties
 properties = [
-    {"name": "Namaca Apartments", "rent": 7000, "city": "Nairobi", "amenities": ["balcony", "parking", "gym"]},
-    {"name": "Greenview Estates", "rent": 8000, "city": "Nairobi", "amenities": ["gym"]},
-    {"name": "Sunrise Villas", "rent": 6000, "city": "Nairobi", "amenities": ["balcony"]}
+    {"name": "Namaca Apartments", "rent": 7000, "city": "Nairobi",
+        "amenities": ["balcony", "parking", "gym"]},
+    {"name": "Greenview Estates", "rent": 8000,
+        "city": "Nairobi", "amenities": ["gym"]},
+    {"name": "Sunrise Villas", "rent": 6000,
+        "city": "Nairobi", "amenities": ["balcony"]}
 ]
 
 # the pop() method removes the item with the specified key name
-properties.pop("location") # Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
-#NOTE: the popitem() method removes the last inserted key-value pair
+# Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+properties.pop("location")
+# NOTE: the popitem() method removes the last inserted key-value pair
 
 properties.popitem()
-print(properties) # Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+# Output: {'name': 'Namaca Apartments', 'rent': 7500, 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+print(properties)
 
-del properties["rent"] # Delete the "rent" key-value pair
-print(properties) # Output: {'name': 'Namaca Apartments', 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+del properties["rent"]  # Delete the "rent" key-value pair
+# Output: {'name': 'Namaca Apartments', 'city': 'Nairobi', 'amenities': ['balcony', 'parking', 'gym']}
+print(properties)
 
-del properties # Clear the entire dictionary
-print(properties) # Raises NameError: name 'properties' is not defined
+del properties  # Clear the entire dictionary
+print(properties)  # Raises NameError: name 'properties' is not defined
 
-properties.clear() # Clear the entire dictionary without deleting it
-print(properties) # Output: {}
+properties.clear()  # Clear the entire dictionary without deleting it
+print(properties)  # Output: {}
 
-#### LOOPING IN DICTIONARIES
+# LOOPING IN DICTIONARIES
 # You can loop through a dictionary using a for loop, while loop, and index numbers loop
 # Using a for loop
 for x in properties:
-    print(x) # Will print each key name in the dictionary
+    print(x)  # Will print each key name in the dictionary
 for x in properties.keys():
-    print(x) # Will print each key name in the dictionary
+    print(x)  # Will print each key name in the dictionary
 
 for x in properties:
-    print(properties[x]) # Will print each value in the dictionary
+    print(properties[x])  # Will print each value in the dictionary
 for x in properties.value():
-    print(x) # Will print each value in the dictionary
+    print(x)  # Will print each value in the dictionary
 
 for x, y in properties.items():
-    print(x, y) # Will print each key-value pair in the dictionary
+    print(x, y)  # Will print each key-value pair in the dictionary
 
-## Copying a dictionary
+# Copying a dictionary
 # The copy() method returns a copy of the dictionary
-properties_copy = properties.copy() # Will create a copy of the properties dictionary
+# Will create a copy of the properties dictionary
+properties_copy = properties.copy()
 
 # or use the dict() constructor to copy a dictionary
-properties_copy = dict(properties) # Will create a copy of the properties dictionary
+# Will create a copy of the properties dictionary
+properties_copy = dict(properties)
+
+# --- PANDAS ---.
+# Often imported under the alias 'pd'
+
+# A panda series is like a column in a table (1-dimentional array holding data of any type)
+
+# Import a Comma Separated V file into a Pandas DataFrame
+
+df = pd.read_csv('data.csv')
+print(df.to_string())  # To print
+
+#

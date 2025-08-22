@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shortest Route Map</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+	<style>
+		#map {
+			height: 90vh; 
+			width: 100%;
+			margin: 20px auto;
+			}
+		body{
+			font-family: Arial, sans-serif;
+			text-align: center;
+	</style>
+</head>
+<body>
+	<h2 style="text-align:center;">Shortest Route to All Properties</h2>
+	<div id="map"></div>
+	
+	<!-- Leaflet JS -->	
+	<script src="https://unpkg.com/lealet@1.9.4/dist/leaflet.js"></script>
+	
+	<script>
+		var map = L.map('map').setView([{{ route[0][0] }}, {{ route[0][1] }}], 15);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        // Coordinates from Flask
+        var route = {{ route | tojson }};
+
+        // Add markers and draw the route
+        var latlngs = [];
+        for (var i = 0; i < route.length; i++) {
+            var latlng = [route[i][0], route[i][1]];
+            latlngs.push(latlng);
+            L.marker(latlng).addTo(map).bindPopup("Stop " + i).openPopup();
+        }
+
+        // Draw polyline (the route)
+        var polyline = L.polyline(latlngs, {color: 'blue'}).addTo(map);
+        map.fitBounds(polyline.getBounds());
+	</script>
+</body>
+</html>
